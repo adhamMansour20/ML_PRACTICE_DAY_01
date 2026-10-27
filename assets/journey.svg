@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" width="1200" height="170" role="img" aria-label="ML Journey tracker: Day 1 complete">
+  <!--
+    To mark a new day as done, copy the "done" node group (Day 01)
+    and change its cx/x values and label.
+  -->
+  <style>
+    .sans { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .dash { stroke-dasharray: 8 8; animation: flow 1.2s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -16; } }
+  </style>
+  <defs>
+    <linearGradient id="done" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#334155" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="1199" height="169" rx="20" fill="#0d1224" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <text class="sans" x="56" y="68" font-size="13" font-weight="700" letter-spacing="4" fill="#94a3b8">ML JOURNEY</text>
+  <text class="sans" x="56" y="100" font-size="24" font-weight="800" fill="#e2e8f0">Day 1 done</text>
+  <text class="sans" x="56" y="126" font-size="15" fill="#64748b">One project, every day</text>
+
+  <!-- track -->
+  <line x1="420" y1="80" x2="1100" y2="80" stroke="#334155" stroke-width="3"/>
+  <line x1="1100" y1="80" x2="1170" y2="80" stroke="url(#fade)" stroke-width="3"/>
+  <line class="dash" x1="440" y1="80" x2="550" y2="80" stroke="#a78bfa" stroke-width="3"/>
+
+  <!-- upcoming days -->
+  <g class="sans" font-size="14" font-weight="700" text-anchor="middle" fill="#475569">
+    <circle cx="550" cy="80" r="18" fill="#0d1224" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="550" y="85">02</text>
+    <circle cx="660" cy="80" r="18" fill="#0d1224" stroke="#334155" stroke-width="2"/>
+    <text x="660" y="85">03</text>
+    <circle cx="770" cy="80" r="18" fill="#0d1224" stroke="#334155" stroke-width="2"/>
+    <text x="770" y="85">04</text>
+    <circle cx="880" cy="80" r="18" fill="#0d1224" stroke="#334155" stroke-width="2"/>
+    <text x="880" y="85">05</text>
+    <circle cx="990" cy="80" r="18" fill="#0d1224" stroke="#334155" stroke-width="2"/>
+    <text x="990" y="85">06</text>
+    <circle cx="1100" cy="80" r="18" fill="#0d1224" stroke="#334155" stroke-width="2"/>
+    <text x="1100" y="85">07</text>
+    <text x="550" y="128" font-size="12" font-weight="600" fill="#64748b">next up</text>
+  </g>
+
+  <!-- done: Day 01 -->
+  <circle cx="440" cy="80" r="20" fill="none" stroke="#a78bfa" stroke-width="2">
+    <animate attributeName="r" values="20;36" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="440" cy="80" r="21" fill="url(#done)"/>
+  <text class="sans" x="440" y="86" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff">01</text>
+  <text class="sans" x="440" y="128" text-anchor="middle" font-size="12" font-weight="600" fill="#c4b5fd">Price Prediction</text>
+</svg>

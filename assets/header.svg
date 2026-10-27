@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Apartment Price Prediction - ML Journey Day 01">
+  <style>
+    .sans { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .mono { font-family: Consolas, Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; }
+    .blob { transform-box: fill-box; transform-origin: center; }
+    .b1 { animation: float1 14s ease-in-out infinite; }
+    .b2 { animation: float2 18s ease-in-out infinite; }
+    .b3 { animation: float1 16s ease-in-out infinite reverse; }
+    @keyframes float1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(140px,40px) scale(1.15); } }
+    @keyframes float2 { 0%,100% { transform: translate(0,0) scale(1.1); } 50% { transform: translate(-160px,-30px) scale(0.9); } }
+    .wave1 { animation: slide 9s linear infinite; }
+    .wave2 { animation: slide 14s linear infinite reverse; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-300px); } }
+    .house { animation: bob 4s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .draw { stroke-dasharray: 100; animation: draw 6s ease-in-out infinite; }
+    @keyframes draw { 0% { stroke-dashoffset: 100; } 35%,80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -100; } }
+    .live { animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1f"/>
+      <stop offset="0.55" stop-color="#16193b"/>
+      <stop offset="1" stop-color="#0a0f1f"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#a5b4fc"/>
+      <stop offset="0.35" stop-color="#22d3ee"/>
+      <stop offset="0.7" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#f0abfc"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;2 0" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <clipPath id="card"><rect width="1200" height="340" rx="24"/></clipPath>
+    <clipPath id="typing">
+      <rect x="320" y="230" height="46" width="0">
+        <animate attributeName="width" values="0;560;560;0" keyTimes="0;0.45;0.88;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="340" fill="url(#bg)"/>
+
+    <!-- glowing background blobs -->
+    <circle class="blob b1" cx="220" cy="90" r="130" fill="#7c3aed" opacity="0.45" filter="url(#blur)"/>
+    <circle class="blob b2" cx="980" cy="250" r="140" fill="#06b6d4" opacity="0.35" filter="url(#blur)"/>
+    <circle class="blob b3" cx="640" cy="40" r="90" fill="#db2777" opacity="0.25" filter="url(#blur)"/>
+
+    <rect width="1200" height="340" fill="url(#grid)"/>
+
+    <!-- house icon (left) -->
+    <g transform="translate(0 0)">
+      <g class="house" fill="none" stroke="url(#stroke)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path class="draw" pathLength="100" d="M92 178 L150 128 L208 178"/>
+        <path class="draw" pathLength="100" d="M110 164 V232 H190 V164"/>
+        <path class="draw" pathLength="100" d="M140 232 V198 H160 V232"/>
+        <path class="draw" pathLength="100" d="M168 176 H182 V190 H168 Z"/>
+        <path class="draw" pathLength="100" d="M176 140 V122 H190 V152"/>
+      </g>
+    </g>
+
+    <!-- rising bar chart (right) -->
+    <g>
+      <line x1="990" y1="232" x2="1120" y2="232" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+      <rect x="1000" width="18" rx="4" fill="url(#barGrad)" y="232" height="0">
+        <animate attributeName="height" values="0;30;30;0" keyTimes="0;0.3;0.85;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="232;202;202;232" keyTimes="0;0.3;0.85;1" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="1028" width="18" rx="4" fill="url(#barGrad)" y="232" height="0">
+        <animate attributeName="height" values="0;0;52;52;0" keyTimes="0;0.06;0.36;0.85;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="232;232;180;180;232" keyTimes="0;0.06;0.36;0.85;1" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="1056" width="18" rx="4" fill="url(#barGrad)" y="232" height="0">
+        <animate attributeName="height" values="0;0;74;74;0" keyTimes="0;0.12;0.42;0.85;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="232;232;158;158;232" keyTimes="0;0.12;0.42;0.85;1" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="1084" width="18" rx="4" fill="url(#barGrad)" y="232" height="0">
+        <animate attributeName="height" values="0;0;100;100;0" keyTimes="0;0.18;0.48;0.85;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="232;232;132;132;232" keyTimes="0;0.18;0.48;0.85;1" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <path d="M1009 190 L1037 168 L1065 146 L1093 120" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
+        <animate attributeName="stroke-dashoffset" values="100;100;0;0;100" keyTimes="0;0.45;0.65;0.85;1" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="1093" cy="120" r="5" fill="#34d399" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.64;0.66;0.85;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="5;8;5" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- pill -->
+    <rect x="450" y="40" width="300" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#a78bfa" stroke-opacity="0.45"/>
+    <circle class="live" cx="474" cy="57" r="5" fill="#34d399"/>
+    <text class="sans" x="612" y="62" text-anchor="middle" font-size="14" font-weight="600" letter-spacing="3" fill="#c4b5fd">ML JOURNEY  ·  DAY 01</text>
+
+    <!-- title -->
+    <text class="sans" x="600" y="152" text-anchor="middle" font-size="50" font-weight="800" fill="url(#titleGrad)">Apartment Price Prediction</text>
+    <text class="sans" x="600" y="196" text-anchor="middle" font-size="20" fill="#94a3b8">My first machine learning project, one day at a time</text>
+
+    <!-- typed formula -->
+    <rect x="300" y="226" width="600" height="52" rx="12" fill="#060914" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.1"/>
+    <g clip-path="url(#typing)">
+      <text class="mono" x="320" y="260" font-size="21" textLength="560" lengthAdjust="spacingAndGlyphs" xml:space="preserve"><tspan fill="#22d3ee">price</tspan><tspan fill="#e2e8f0"> = </tspan><tspan fill="#c4b5fd">base_price</tspan><tspan fill="#e2e8f0"> + </tspan><tspan fill="#fbbf24">rooms</tspan><tspan fill="#e2e8f0"> × </tspan><tspan fill="#c4b5fd">price_per_room</tspan></text>
+    </g>
+    <g class="cursor">
+      <rect x="320" y="240" width="3" height="27" fill="#e2e8f0">
+        <animate attributeName="x" values="322;882;882;322" keyTimes="0;0.45;0.88;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- waves -->
+    <g opacity="0.35">
+      <path class="wave1" fill="url(#waveGrad)" d="M0 312 Q75 296 150 312 T300 312 T450 312 T600 312 T750 312 T900 312 T1050 312 T1200 312 T1350 312 T1500 312 T1650 312 T1800 312 T1950 312 T2100 312 T2250 312 T2400 312 V340 H0 Z"/>
+    </g>
+    <g opacity="0.2">
+      <path class="wave2" fill="url(#waveGrad)" d="M0 320 Q75 334 150 320 T300 320 T450 320 T600 320 T750 320 T900 320 T1050 320 T1200 320 T1350 320 T1500 320 T1650 320 T1800 320 T1950 320 T2100 320 T2250 320 T2400 320 V340 H0 Z"/>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="339" rx="24" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>

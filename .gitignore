@@ -1,0 +1,14 @@
+# Local Claude Code notes
+.remember/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
